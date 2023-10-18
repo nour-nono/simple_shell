@@ -1,5 +1,17 @@
 #include "shell.h"
 
+
+/**
+ * handle_sigint - copy string in heap
+ *
+ * @sig: string
+ *
+ * Return: string.
+ */
+void handle_sigint()
+{
+	exit(0);
+}
 /**
  * get_line - copy string in heap
  *
@@ -18,6 +30,7 @@ ssize_t get_line(char **lineptr, size_t *n, int fd, int flag1)
 
 	if (flag1)
 		i = 0;
+	signal(SIGINT, handle_sigint);
 	if (flag1 || flag)
 		sz = read(fd, buffer, 8180), flag = 0;
 	if (sz == -1)
@@ -48,8 +61,6 @@ ssize_t get_line(char **lineptr, size_t *n, int fd, int flag1)
 	while (buffer[i] == '\n' || buffer[i] == ' ' || buffer[i] == '\t')
 		++i;
 	(*lineptr)[j] = '\0';
-	if (buffer[i] == '\0')
-		--j;
 	*n = j;
 	return (*n);
 }

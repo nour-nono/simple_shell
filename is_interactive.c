@@ -38,10 +38,10 @@ void is_interactive(char *program_name)
 				else
 					exec_command(command, arr, &status);
 			}
-			free(command);
-			free_array(arr);
-			++i;
 		}
+		free(command);
+		free_array(arr);
+		++i;
 	}
 	is_exit(NULL, status, i, program_name);
 }

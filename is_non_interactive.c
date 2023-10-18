@@ -34,10 +34,10 @@ void is_non_interactive(char *program_name)
 				else
 					exec_command(command, arr, &status);
 			}
-			free_array(arr);
-			free(command);
-			++i;
 		}
+		free_array(arr);
+		free(command);
+		++i;
 		buff = NULL, command = NULL, arr = NULL, sz = 0;
 	}
 	is_exit(NULL, status, i, program_name);

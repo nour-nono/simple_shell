@@ -43,9 +43,9 @@ void is_file(char *program_name, char *filename)
 				else
 					exec_command(command, arr, &status);
 			}
-			free_array(arr);
-			free(command);
 		}
+		free_array(arr);
+		free(command);
 		++i, buff = NULL, command = NULL, arr = NULL, sz = 0;
 	}
 	close(fd);
