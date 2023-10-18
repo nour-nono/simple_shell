@@ -62,7 +62,7 @@ void int_to_string(char *arr, int zz)
  */
 void show_error(char *program_name, int i, char *command, char *err)
 {
-	char *out_put = NULL, *arr = NULL;
+	char *out_put = NULL, *arr = NULL, *token = _strtok(command, " \n\t");
 	int size = _strlen(program_name) + _strlen(command) + 7;
 
 	arr = (char *)malloc(sizeof(char) * 16);
@@ -77,7 +77,7 @@ void show_error(char *program_name, int i, char *command, char *err)
 	out_put = _strcat(out_put, ": ");
 	out_put = _strcat(out_put, arr);
 	out_put = _strcat(out_put, ": ");
-	out_put = _strcat(out_put, command);
+	out_put = _strcat(out_put, token);
 	out_put = _strcat(out_put, ": ");
 	out_put = _strcat(out_put, err);
 	write(2, out_put, size);
