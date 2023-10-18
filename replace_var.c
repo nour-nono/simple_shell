@@ -52,7 +52,7 @@ char *change_to_status(char *arr_str, int status)
 	the_rest_of_str[j] = '\0';
 	int_to_string(status_str, status);
 	sz = _strlen(status_str) + _strlen(the_rest_of_str) + 1;
-	arr_str = _realloc(arr_str, sizeof(arr_str),sz);
+	arr_str = _realloc(arr_str, sizeof(arr_str), sz);
 	_strcpy(arr_str, status_str);
 	_strcat(arr_str, the_rest_of_str);
 	free(status_str);
