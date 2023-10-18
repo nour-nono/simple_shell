@@ -61,7 +61,7 @@ void exec_command(char *command, char **command_and_argu, int *status)
 	}
 	else if (child_id > 0)
 	{
-		if (wait(NULL) == -1)
+		if (wait(status) == -1)
 			perror("");
 		if(*status != 0)
 			*status = 2;
