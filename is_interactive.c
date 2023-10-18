@@ -27,6 +27,8 @@ void is_interactive(char *program_name)
 		{
 			if (arr[0] && access(arr[0], F_OK | X_OK) == 0)
 				exec_command(arr[0], arr, &status);
+			else if (!arr[0])
+				{}
 			else
 			{
 				command = search_for_command_in_paths(arr[0]);
