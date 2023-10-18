@@ -47,7 +47,7 @@ ssize_t get_line(char **lineptr, size_t *n, int fd, int flag1)
 	}
 	while (buffer[i] == '\n' || buffer[i] == ' ' || buffer[i] == '\t')
 		++i;
-	(*lineptr) = _realloc((*lineptr), 1024, j + 1), (*lineptr)[j] = '\0';
+	(*lineptr) = realloc((*lineptr), j + 1), (*lineptr)[j] = '\0';
 	if (buffer[i] == '\0')
 		--j;
 	*n = j;
