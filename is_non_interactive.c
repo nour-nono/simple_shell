@@ -37,8 +37,8 @@ void is_non_interactive(char *program_name)
 			free_array(arr);
 			free(command);
 			++i;
-			buff = NULL, command = NULL, arr = NULL, sz = 0;
 		}
+		buff = NULL, command = NULL, arr = NULL, sz = 0;
 	}
 	is_exit(NULL, status, i, program_name);
 }

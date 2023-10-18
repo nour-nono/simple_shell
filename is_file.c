@@ -45,8 +45,8 @@ void is_file(char *program_name, char *filename)
 			}
 			free_array(arr);
 			free(command);
-			++i, buff = NULL, command = NULL, arr = NULL, sz = 0;
 		}
+		++i, buff = NULL, command = NULL, arr = NULL, sz = 0;
 	}
 	close(fd);
 	is_exit(NULL, status, i, program_name);
