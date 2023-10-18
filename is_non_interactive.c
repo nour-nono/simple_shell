@@ -34,9 +34,9 @@ void is_non_interactive(char *program_name)
 				else
 					exec_command(command, arr, &status);
 			}
+			free(command);
 		}
 		free_array(arr);
-		free(command);
 		++i;
 		buff = NULL, command = NULL, arr = NULL, sz = 0;
 	}
