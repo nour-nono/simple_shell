@@ -54,13 +54,14 @@ void exec_command(char *command, char **command_and_argu, int *status)
 	{
 		if (execve(command, command_and_argu, NULL) == -1)
 		{
+			*status = 2;
 			perror("");
 			exit(2);
 		}
 	}
 	else if (child_id > 0)
 	{
-		if (wait(status) == -1)
+		if (wait(NULL) == -1)
 			perror("");
 	}
 }
