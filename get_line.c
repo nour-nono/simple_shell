@@ -8,8 +8,9 @@
  *
  * Return: string.
  */
-void handle_sigint(void)
+void handle_sigint(int sign)
 {
+	(void) sign;
 	exit(0);
 }
 /**

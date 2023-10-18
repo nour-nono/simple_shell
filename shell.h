@@ -60,7 +60,7 @@ void print_env(void);
 void is_exit(char **arr, int status, int i, char *program_name);
 
 /*get_line*/
-void handle_sigint(void);
+void handle_sigint(int sign);
 ssize_t get_line(char **lineptr, size_t *n, int fd, int flag1);
 
 /*show_error*/
