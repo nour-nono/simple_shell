@@ -38,6 +38,7 @@ void is_exit(char **arr, int status, int i, char *program_name)
 
 	if (arr == NULL || arr[1] == NULL)
 	{
+		free_array(arr);
 		exit(status);
 	}
 	j = _atoi(arr[1]);
