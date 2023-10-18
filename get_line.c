@@ -4,7 +4,7 @@
 /**
  * handle_sigint - copy string in heap
  *
- * @sig: string
+ * @sign: string
  *
  * Return: string.
  */
