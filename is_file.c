@@ -17,8 +17,8 @@ void is_file(char *program_name, char *filename)
 	if (fd == -1)
 	{
 		error = malloc(sizeof(char) * 1024);
-		_strcpy(error, "cannot open ");
-		_strcat(error, filename);
+		error = _strcpy(error, "cannot open ");
+		error = _strcat(error, filename);
 		show_error(program_name, 0, error, "No such file\n");
 		free(error);
 		exit(2);
