@@ -63,7 +63,7 @@ void exec_command(char *command, char **command_and_argu, int *status)
 	{
 		if (wait(status) == -1)
 			perror("");
-		if(*status != 0)
+		if (*status != 0)
 			*status = 2;
 	}
 }

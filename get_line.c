@@ -8,7 +8,7 @@
  *
  * Return: string.
  */
-void handle_sigint()
+void handle_sigint(void)
 {
 	exit(0);
 }
