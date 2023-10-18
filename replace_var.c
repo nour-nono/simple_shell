@@ -53,7 +53,7 @@ char *change_to_status(char *arr_str, int status)
 	int_to_string(status_str, status);
 	sz = _strlen(status_str) + _strlen(the_rest_of_str) + 1;
 	free(arr_str);
-	arr_str =(char *) malloc(sizeof(char) * sz);
+	arr_str = (char *) malloc(sizeof(char) * sz);
 	_strcpy(arr_str, status_str);
 	_strcat(arr_str, the_rest_of_str);
 	free(status_str);
@@ -85,7 +85,7 @@ char *change_to_pid(char *arr_str)
 	int_to_string(pid_str, pid_num);
 	sz = _strlen(pid_str) + _strlen(the_rest_of_str) + 1;
 	free(arr_str);
-	arr_str =(char *) malloc(sizeof(char) * sz);
+	arr_str = (char *) malloc(sizeof(char) * sz);
 	_strcpy(arr_str, pid_str);
 	_strcat(arr_str, the_rest_of_str);
 	free(pid_str);
@@ -116,13 +116,13 @@ char *change_to_env_var(char *arr_str)
 	{
 		free(the_rest_of_str);
 		free(arr_str);
-		arr_str =(char *) malloc(sizeof(char) * 2);
+		arr_str = (char *) malloc(sizeof(char) * 2);
 		arr_str[0] = '\0';
 		return (arr_str);
 	}
 	sz = _strlen(env_str) + 1;
 	free(arr_str);
-	arr_str =(char *) malloc(sizeof(char) * sz);
+	arr_str = (char *) malloc(sizeof(char) * sz);
 	_strcpy(arr_str, env_str);
 	free(env_str);
 	free(the_rest_of_str);
