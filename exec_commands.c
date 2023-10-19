@@ -14,16 +14,16 @@ char *search_for_command_in_paths(char *command)
 
 	if (path_copy == NULL)
 		return (NULL);
-	all_paths = make_arr_of_str(path_copy, ":\n\t");
-	free(path_copy);
+	all_paths = make_arr_of_str(path_copy, ":\t\n");
+	if (all_paths == NULL)
+		return (NULL);
 	while (all_paths[i])
 	{
 		search_in_this_path = malloc(_strlen(all_paths[i]) + _strlen(command) + 2);
 		if (search_in_this_path == NULL)
 			return (NULL);
 		_strcpy(search_in_this_path, all_paths[i]);
-		_strcat(search_in_this_path, "/");
-		_strcat(search_in_this_path, command);
+		_strcat(search_in_this_path, "/"), _strcat(search_in_this_path, command);
 		if (search_in_this_path && access(search_in_this_path, F_OK | X_OK) == 0)
 		{
 			flag = 1;
@@ -33,7 +33,7 @@ char *search_for_command_in_paths(char *command)
 		++i;
 	}
 	i = 0;
-	free_array(all_paths);
+	free(path_copy), free_array(all_paths);
 	if (flag)
 		return (search_in_this_path);
 	else
