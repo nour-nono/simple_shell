@@ -49,7 +49,13 @@ char *search_for_command_in_paths(char *command)
  */
 void exec_command(char *command, char **command_and_argu, int *status)
 {
-	pid_t child_id = fork();
+	pid_t child_id;
+	if (!command || access(arr[0], F_OK | X_OK))
+	{
+		*status = 2;
+		return;
+	}
+	child_id = fork();
 
 	if (child_id == -1)
 		perror("");
