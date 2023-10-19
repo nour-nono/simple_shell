@@ -52,7 +52,7 @@ void exec_command(char *command, char **command_and_argu, int *status)
 		perror("");
 	else if (child_id == 0)
 	{
-		if (execve(command, command_and_argu, NULL) == -1)
+		if (execve(command, command_and_argu, environ) == -1)
 		{
 			*status = 2;
 			perror("");
