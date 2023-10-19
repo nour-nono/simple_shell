@@ -9,9 +9,12 @@
 char *search_for_command_in_paths(char *command)
 {
 	char *path_copy = _get_env("PATH"), *search_in_this_path = NULL;
-	char **all_paths = make_arr_of_str(path_copy, ":\n\t");
+	char **all_paths = NULL;
 	int i = 0, flag = 0;
 
+	if (path_copy == NULL)
+		return (NULL);
+	all_paths = make_arr_of_str(path_copy, ":\n\t");
 	free(path_copy);
 	while (all_paths[i])
 	{
