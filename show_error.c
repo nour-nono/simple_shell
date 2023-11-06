@@ -80,7 +80,7 @@ void show_error(char *program_name, int i, char *command, char *err)
 	out_put = _strcat(out_put, command);
 	out_put = _strcat(out_put, ": ");
 	out_put = _strcat(out_put, err);
-	write(2, out_put, size);
+	write(2, out_put, size - 1);
 	free(out_put);
 	free(arr);
 }
