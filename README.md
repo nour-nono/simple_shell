@@ -1,6 +1,7 @@
 # 0x16. C - Simple Shell
  **By Spencer Cheng, featuring Julien Barbier**
- Project to be done in teams of 2 people (your team: Godswill Kalu, Vatalis Ibeh)
+ **Simple Shell** is a custom implementation of a Unix shell, designed to provide a user interface for accessing and managing the operating system's services. This project aims to emulate the basic functionalities of the sh shell, allowing users to execute commands, navigate directories, and manage processes. It is developed in C and adheres to the principles of the Unix operating system.
+
 
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
